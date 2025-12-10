@@ -10,8 +10,8 @@ function addExportStatement(file: string, options: Options): string {
   switch (entity.type) {
     case 'component': {
       if (
-        entity.blueprint === 'glimmer-strict' ||
-        entity.blueprint === 'template-only-strict'
+        entity.blueprint === 'glimmer' ||
+        entity.blueprint === 'template-only'
       ) {
         return [
           `export { default as ${entity.pascalizedName} } from './${entity.type}s/${entity.name}.gts';`,
