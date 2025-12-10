@@ -1,6 +1,6 @@
 import type { TOC } from '@ember/component/template-only';
 
-import styles from './<%= data.localFileName %>.css';
+import styles from './<%= data.localFileName %>.module.css';
 
 interface <%= options.entity.pascalizedName %>Signature {
   Args: {};
@@ -10,10 +10,10 @@ interface <%= options.entity.pascalizedName %>Signature {
   Element: null;
 }
 
-const <%= options.entity.pascalizedName %> = <template>
+const <%= options.entity.pascalizedName %>: TOC<<%= options.entity.pascalizedName %>Signature> = <template>
   <div class={{styles.container}}>
     {{yield}}
   </div>
-</template> satisfies TOC<<%= options.entity.pascalizedName %>Signature>;
+</template>;
 
 export default <%= options.entity.pascalizedName %>;
